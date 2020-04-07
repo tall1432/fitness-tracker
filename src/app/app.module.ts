@@ -14,6 +14,7 @@ import { PastTrainingComponent } from "./training/past-training/past-training.co
 import { WelcomeComponent } from "./welcome/welcome.component";
 import {MatButtonModule} from "@angular/material/button"
 import { FormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { FormsModule } from '@angular/forms';
     MaterialModule,
     FlexLayoutModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatDatepickerModule
 
   ],
   providers: [],
