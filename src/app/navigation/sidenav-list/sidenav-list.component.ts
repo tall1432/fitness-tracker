@@ -23,6 +23,10 @@ authSubscription:Subscription;
 onSidenavClose(){
 this.sidenavClose.emit();
 }
+onLogout(){
+  this.onSidenavClose();
+  this.authService.logout();
+}
 ngOnDestroy(){
 this.authSubscription.unsubscribe();
 }
