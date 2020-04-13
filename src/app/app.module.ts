@@ -13,8 +13,12 @@ import { NewTrainingComponent } from "./training/new-training/new-training.compo
 import { PastTrainingComponent } from "./training/past-training/past-training.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import {MatButtonModule} from "@angular/material/button"
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { HeaderComponent } from './navigation/header/header.component';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
+import { StoptrainingComponent } from './training/current-training/stop-training.component';
+import { AuthService } from './auth/auth.service';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,12 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 
     PastTrainingComponent,
 
-    WelcomeComponent
+    WelcomeComponent,
+
+    HeaderComponent,
+
+    SidenavListComponent,
+    StoptrainingComponent
   ],
   imports: [
     BrowserModule,
@@ -42,10 +51,12 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     FlexLayoutModule,
     MatButtonModule,
     FormsModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    ReactiveFormsModule
 
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AuthService],
+  bootstrap: [AppComponent],
+  entryComponents:[StoptrainingComponent]
 })
 export class AppModule {}
